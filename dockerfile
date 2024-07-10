@@ -3,7 +3,7 @@ FROM ubuntu:latest
 
 # Install PHP-FPM and other necessary packages
 RUN apt-get update && \
-    apt-get install -y nginx php-common php-mysql php-cgi php-mbstring php-curl php-gd php-xml php-xmlrpc php-pear nano mc
+    apt-get install -y nginx php-common php-mysql php-cgi php-mbstring php-curl php-gd php-xml php-xmlrpc php-pear nano mc mysql-server
 
 # Remove the default Nginx configuration file
 #RUN rm /etc/nginx/conf.d/default.conf
