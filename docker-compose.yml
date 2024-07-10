@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  nginx-php:
+    build: ./nginx
+    ports:
+      - "8080:80"  # Map host port 8080 to container port 80
+    depends_on:
+      - mysql
+
+  mysql:
+    build: ./mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: my_database
+      MYSQL_USER: my_user
+      MYSQL_PASSWORD: my_password
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
