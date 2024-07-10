@@ -15,7 +15,7 @@ COPY nginx.conf /etc/nginx/conf.d/
 #COPY php-fpm.conf /etc/php/7.x/fpm/
 
 # Copy the PHP application files to the web root directory
-#COPY src/ /usr/share/nginx/html/
+COPY src/ /usr/share/nginx/html/
 
 # Expose ports
 EXPOSE 80 443 
